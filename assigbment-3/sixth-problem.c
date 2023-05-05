@@ -29,8 +29,12 @@ int main(){
 }
 /*
 sample output
-Before calling the swap function values of x and y :
+Before calling the swap1 function values of x and y :
 10 20
-After calling the swap function values of x and y :
+After calling the swap1 function values of x and y :
+10 20
+Before calling the swap2 function values of x and y :
+10 20
+After calling the swap2 function values of x and y :
 20 10
 */

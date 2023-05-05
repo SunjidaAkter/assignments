@@ -24,19 +24,21 @@ Sample Input
 Sample Output
 2
 
-
+/*
+sample input
+5
+sample output
+5000
+//
 */
 
 #include<stdio.h>
-#include<string.h>
-#include<math.h>
-#include<stdlib.h>
-#include<limits.h>
 int count_before_zero(int* a,int n){
     int count=0;
     for(int i=0;i<n;i++){
         if(a[i]!=0){
             count++;
+            
         }else{
             return count;
         }

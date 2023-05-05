@@ -1,1 +1,8 @@
-Not Palindrome
+Before calling the swap1 function values of x and y :
+10 20
+After calling the swap1 function values of x and y :
+10 20
+Before calling the swap2 function values of x and y :
+10 20
+After calling the swap2 function values of x and y :
+20 10

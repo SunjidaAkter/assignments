@@ -18,7 +18,7 @@ int main(){
         swap(a[i],a[j]);
     }
     for(int i=0;i<n;i++){
-        cout<<" "<<a[i].nm<<" "<<a[i].cls<<" "<<a[i].s<<" "<<a[i].math_marks<<" "<<a[i].eng_marks<<endl;
+        cout<<a[i].nm<<" "<<a[i].cls<<" "<<a[i].s<<" "<<a[i].math_marks<<" "<<a[i].eng_marks<<endl;
     }
     return 0;
 }

@@ -1,0 +1,282 @@
+
+Answer Script
+
+Question No. 1-a
+Explain Stack and Heap memory.
+Answer No. 1-a
+Stack and Heap Memory:
+Memory is divided into two parts in many programming languages: the stack and the heap. The stack memory is a memory usage mechanism that allows the system memory to be managed automatically by the compiler. The heap is a part of the memory used for dynamic memory allocation. Memory allocation and deallocation in the stack behaves in a strict Last-In-First-Out (LIFO) way. But memory allocation and deallocation in the heap can happen in any order. The size of the stack is generally fixed and limited but the size of the heap is typically larger and not as constrained as the stack. We use the stack for static memory allocation, where variables have a limited lifetime and are automatically deallocated and we use the heap for dynamic memory allocation, where we have more control over memory allocation and deallocation.
+
+
+
+Question No. 1-b
+Why do we need dynamic memory allocation? Explain with examples.
+Answer No. 1-b
+The reasons for which we need dynamic memory allocation :
+We need dynamic memory allocation when we want to allocate memory for data or variables whose size cannot be determined at compile-time. With dynamic memory allocation, we can allocate or de-allocate memory by the operating system during the run-time. It is more efficient than static memory allocation because we can de-allocate and reuse our memory during the run-time of our program.
+
+For Example-1: 
+If we want to resize data like arrays we can do it with dynamic memory allocation. We can allocate new memory, copy the existing data, and deallocate the old memory. A code example is given below:
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    //the array we needed before
+    //1 2 3
+    int *a=new int[3];
+    for(int i=0;i<3;i++){
+        cin>>a[i];//input 1 2 3
+    }
+    for(int i=0;i<3;i++){
+        cout<<a[i]<<" ";//output 1 2 3
+    }
+    cout<<endl;
+    //the array we need now
+    //1 2 3 4 5
+    int *b=new int[5];
+    for(int i=0;i<3;i++){
+        b[i]=a[i];
+    }
+    b[3]=4,b[4]=5;
+    for(int i=0;i<5;i++){
+        cout<<b[i]<<" ";//output 1 2 3 4 5
+    }
+    delete[] a;
+    return 0;
+}
+
+For Example - 2: 
+We also can dynamically allocate objects by using dynamic memory allocation. A code example is given below:
+
+#include<bits/stdc++.h>
+using namespace std;
+class MyClass {
+public:
+    int age;
+    int salary;
+};
+int main(){
+    MyClass* me=new MyClass;
+    int my_age=me->age=7;
+    cout<<my_age;//output 7//using dynamic object
+    delete me;//releasing the memory
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+Question No. 1-c
+How to create a dynamic array? What are the benefits of it?
+ Answer No. 1-c
+How we create a dynamic array:
+We can create a dynamic array in C++, by using the ‘new’ keyword to allocate memory dynamically. An example of creating a dynamic array is given below:
+ 
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;//input 3
+    int *a=new int[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];//input 1 2 3
+    }
+    for(int i=0;i<n;i++){
+        cout<<a[i]<<" ";//output 1 2 3
+    }
+    return 0;
+}
+
+Benefits of Dynamic Arrays are given below :
+These arrays only use the necessary amount of memory, that size of memory that is actually required.
+We can create arrays with a size that is unknown at compile-time.
+Dynamic arrays give us more control over memory management. 
+We allocate dynamic arrays on the heap so that we can access and manipulate them across different functions and scopes and also they will have a longer lifetime than local variables.
+Dynamic arrays allow us to modify the size of the array dynamically
+
+
+
+
+
+Question No. 2-a
+How does class and object work? How to declare an object?
+Answer No. 2-a
+Class and Object:
+A class is a blueprint which defines the properties and behaviors (methods) of a specific type of object and an object is created from a class. An object represents a particular concept based on the defined class.
+
+How we declare an object:
+For declaring an object, at first, we can define a class that describes the properties and behaviors (methods) of the objects. After the class is declared and defined, we can declare an object of that class. After declaring the object, we can access its members like data or methods, by using the dot operator. A code example is given below: 
+#include<bits/stdc++.h>
+using namespace std;
+class Bike {//declaring class
+public:
+    int price;
+    char* color;
+};
+int main(){
+    Bike honda;//declaring object
+    honda.price=120000;//accessing object property
+    char bike_color[101]="blue";
+    honda.color=bike_color;
+    cout<<honda.price<<endl;//output 120000
+    cout<<honda.color;//output blue
+    return 0;
+}
+
+
+
+
+
+Question No. 2-b
+What is a constructor and why do we need this? How to create a constructor show with an example.
+Answer No. 2-b
+Constructor:
+Constructors are a necessary part of OOP (object-oriented programming) since they allow us to initialize the newly created objects. A constructor is a special method of a class that is automatically called when an object of the class is created.
+
+The reasons for which we need Constructor: 
+We need constructors for object initialization, encapsulation, default values,  customization, and resource management. Constructors play an important role in ensuring that objects are properly initialized.
+
+An example is given below that demonstrates the creation of a constructor for the ‘Student’ class:
+#include<bits/stdc++.h>
+using namespace std;
+class Student{
+    public:
+        string name;
+        int roll;
+        Student(string n,int r){
+            strcpy(name,n);
+            roll=r;
+        }
+};
+int main(){
+    char stu_name[101]="sun";
+    Student first(stu_name,1);
+    cout<<first.name<<endl;//output sun
+    cout<<first.roll<<endl;//output 1
+    return 0;
+}
+
+In the above example, we defined a parameterized constructor for the ‘Student’  class that takes a ‘n’ of type ‘string’ and a ‘r’ of type int. The constructor initializes the name and roll properties of the object with the provided values. In the main function, we made an object of the ‘Student’ class by passing the name "sun" and roll 1 to the constructor. The constructor is automatically called, and the object is initialized with the provided values. Finally, we print the object's properties to verify the initialization.
+
+
+
+Question No. 2-c
+Create a class named Person where the class will have properties name(string), height(float) and age(int). Make a constructor and create a dynamic object of that class and finally pass proper values using the constructor.
+ Answer No. 2-c
+#include<bits/stdc++.h>
+using namespace std;
+class Person{
+    public:
+        string name;
+        float height;
+        int age;
+        //constructor
+        Person(string n,float h,int a){
+            name=n;
+            height=h;
+            age=a;
+        }
+};
+int main(){
+    char p_name[101]="Sunjida";
+    Person* first=new Person(p_name,5.8,12);
+    cout<<first->name<<endl;//outpit Sunjida
+    cout<<first->height<<endl;//output 5.8
+    cout<<first->age<<endl;//output 12
+    return 0;
+}
+
+
+
+
+
+Question No. 3-a
+What is the size that an object allocates to the memory?
+Answer No. 3-a
+The size that an object allocates to the memory:
+The size that an object allocates to the memory depends on the total size of all the data inside that object. The C++ standard does not mandate a specific size for objects, as it may vary depending on the implementation.
+
+
+
+Question No. 3-b
+Can you return a static object from a function? If yes, show with an example.
+Answer No. 3-b
+Yes, we can return a static object from a function. An example of this is given below : 
+#include<bits/stdc++.h>
+using namespace std;
+class Human{
+    public:
+        string name;
+        int age;
+        Human(string n,int a){
+            name=n;
+            age=a;
+        }  
+};
+Human fun(){
+    char h_name[101]="Adam";
+    Human first(h_name,100);
+    return first;
+}
+int main(){
+    Human first=fun();
+    cout<<first.name<<endl;//output Adam
+    cout<<first.age<<endl;//output 100
+    return 0;
+}
+
+In the above example the ‘fun’ function returns a static object ‘first’ of the ‘Human’ class. The static object is created the first time the function is called.
+
+
+
+Question No. 3-c
+Why do we need -> (arrow sign)?
+ Answer No. 3-c
+The reasons for which we need ->(arrow sign):
+We use the arrow sign (->) in C++ to access members (fields or methods) of an object through a pointer. It is a shorthand for accessing members (fields or methods) of an object pointed to by a pointer, similar to the dot operator (.) used for accessing members of an object directly.
+For example,
+a →b is essentially a shorthand notation for (*a). b, ie, if a is a pointer to an object, then a→b is accessing the property b of the object that points to.
+
+
+
+Question No. 3-d
+Create two objects of the Person class from question 2-c and initialize them with proper value. Now compare whose age is greater, and print his/her name.
+ Answer No. 3-d
+#include<bits/stdc++.h>
+using namespace std;
+class Person{
+    public:
+        string name;
+        float height;
+        int age;
+        //constructor
+        Person(string n,float h,int a){
+            name=n;
+            height=h;
+            age=a;
+        }
+};
+int main(){
+    char s_name[101]="Abdus Salam";
+    char k_name[101]="Abdul Kalam";
+    Person salam(s_name,5.8,30);
+    Person kalam(k_name,5.9,31);
+    if(salam.age>kalam.age){
+        cout<<salam.name;
+    }else{
+        cout<<kalam.name;
+    }
+    return 0;
+}
+//output Abdul Kalam
+
+
+
+
+

@@ -37,3 +37,18 @@ int main(){
     else cout<<v;
     return 0;
 }
+/*
+input
+    8
+    -4 0 2 6 9 10 29 54
+    29
+output
+    6
+    
+input
+    10
+    0 1 2 3 4 5 6 7 8 9
+    -3
+output
+    Not Found
+*/

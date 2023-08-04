@@ -38,3 +38,12 @@ int main(){
     for(int i=0;i<m+n;i++)cout<<c[i]<<" ";
     return 0;
 }
+/*
+input
+    4
+    8 6 4 2	
+    4
+    7 5 3 1
+output
+    8 7 6 5 4 3 2 1    
+*/

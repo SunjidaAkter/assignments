@@ -58,3 +58,16 @@ int main(){
     for(int i=0;i<n;i++)cout<<a[i]<<" ";
     return 0;
 }
+/*
+input
+    7
+    1 2 9 4 0 2 5
+output
+    9 5 4 2 2 1 0
+
+input
+    6
+    5 3 -1 3 3 8
+outpuy
+    8 5 3 3 3 -1
+*/

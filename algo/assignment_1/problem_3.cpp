@@ -41,3 +41,18 @@ int main(){
     }
     return 0;
 }
+/*
+input
+    7
+    1 3 4 6 6 9 17		
+    6
+output
+    YES
+
+input
+    10
+    0 1 2 3 4 5 6 7 8 9
+    3 
+output
+    NO       
+*/

@@ -49,15 +49,9 @@ int main(){
     string command,brow;
     cin>>command>>brow;
     auto it=find(myList.begin(),myList.end(),brow);
-    if (it != myList.end()) {
-        cout << *it << endl;
-        tmp = head;
-        while (tmp->val != brow) {
-            tmp = tmp->next;
-        }
-    } else {
-        cout << "Not Available" << endl;
-        tmp = head;
+    cout << *it << endl;
+    while (tmp->val != brow) {
+        tmp = tmp->next;
     }
     for(int i=0;i<q-1;i++){
         cin>>command;

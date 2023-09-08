@@ -10,8 +10,8 @@ int main(){
         for(int i=0;i<n;i++)cin>>w[i];
         for(int i=0;i<n;i++)cin>>v[i];
         int dp[n+1][s+1];
-        for(int i=0;i<n;i++){
-            for(int j=0;j<s;j++){
+        for(int i=0;i<=n;i++){
+            for(int j=0;j<=s;j++){
                 if(i==0||j==0)dp[i][j]=0;
             }
         }
@@ -24,7 +24,13 @@ int main(){
                 }
             }
         }
-        cout<<dp[n][s]<<endl;
+    //     for(int i=0;i<=n;i++){
+    //         for(int j=0;j<=s;j++){
+    //             cout<<dp[i][j]<<" ";
+    //         }
+    //     cout<<endl;
+    // }
+    cout<<dp[n][s]<<endl;
     }
     return 0;
 }

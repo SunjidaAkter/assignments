@@ -28,10 +28,7 @@ int main(){
         s.clear();
         s.insert(i);
         dfs(i);
-        while(!s.empty()){
-            sum++;
-            s.erase(*s.begin());
-        }
+        sum=s.size();
         if(sum<=1)continue;
         v.push_back(sum);
     }
